@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OTP Login Page</title>
+</head>
+<body>
+<form action="" method="POST">
+    <div class="form-group">
+        {% csrf_token %}
+        {{form.as_p}}
+    </div>
+    <div class="form-group">
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+    </form>
+
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <script>
+
+        $(function() {
+            $('#id_username').on('focusout', function() {
+                const userName = $(this).val();
+                if (userName.length > 2) {
+                    $.ajax({
+                        url: "{% url 'account:getuser' %}",
+                        type: 'POST',
+                        dataType: 'JSON',
+                        data: {
+                            username: userName
+                        },
+                        error: (err) => {
+                            errData = JSON.parse(err.responseText)
+                            alert(errData.otp);
+                        }
+                    });
+                }
+            })
+        })
+
+    </script>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>HomePage</h1>
+{% if request.user.is_authenticated %}
+<form action="/search" method="get">
+  <input name="q" type="text" placeholder="Search...">
+  <button type="submit" class="btn btn-primary">Submit
+	</button>
+</form>
+ {% else %}
+        <h1>You Are Not a Logged User!!!</h1>
+    {% endif %}
+{% endblock %}
+
