@@ -13,9 +13,9 @@ urlpatterns = [
     path('logout', Logout.as_view(), name='logout'),
     path('search/', SearchResultsView.as_view(), name='search_results'),
     path('home/', HomePageView.as_view(), name='home'),
-    url(r'^topics/(?P<topic_id>\d+)/$', views.topic, name='topic'),
-    url(r'^topics1/(?P<topic_id>\d+)/$', views.topic_country, name='topic1'),
-    url(r'^topics2/(?P<topic_id>\d+)/$', views.topic_language, name='topic2'),
+    path('topics/<int:topic_id>/', views.topic, name='topic'),
+    path('topics1/<str:topic_id>/', views.topic_country, name='topic1'),
+    path('topics2/<int:topic_id>/', views.topic_language, name='topic2'),
 
     # API
     path('getuser', GetUserAPI.as_view(), name='getuser')

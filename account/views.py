@@ -128,7 +128,7 @@ def topic(request, topic_id):
     return render(request, 'topic.html', {'topic':topic} )
 
 def topic_country(request, topic_id):
-    topic  = country.objects.all().filter(id=topic_id)
+    topic  = country.objects.all().filter(Code=topic_id)
     return render(request, 'topic1.html', {'topic':topic} )
 
 def topic_language(request, topic_id):
