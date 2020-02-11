@@ -1,5 +1,6 @@
 from django.db import models
 import random
+from django.urls import reverse
 from django.utils import timezone
 from django.conf import settings
 from django.dispatch import receiver
@@ -67,6 +68,7 @@ class city(models.Model):
     def __Str__(self):
         return self.Name
 
+    
     
 class country(models.Model):
     Code = models.CharField(max_length=3,primary_key = True,default="")

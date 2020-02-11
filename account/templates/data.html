@@ -3,85 +3,21 @@
 {% block content %}
  <h1>Search Results</h1>
  {% for city in object_list %}
+
 <div class="table-responsive">
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">City</th>
-        <th scope="col">CountryCode</th>
-        <th scope="col">District</th>
-        <th scope="col">Population</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>{{ city.Name }}</td>
-        <td>{{ city.CountryCode }}</td>
-        <td>{{ city.District }}</td>
-        <td>{{ city.Population }}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="table1-responsive">
-  <table class="table1">
-    <thead>
-      <tr>
+        <th scope="col">City</th></a>
         <th scope="col">Language</th>
-        <th scope="col">CountryCode</th>
-        <th scope="col">IsOfficial</th>
-        <th scope="col">Percentage</th>
+         <th scope="col">Country</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>{{city.Language}}</td>
-        <td>{{ city.CountryCode }}</td>
-        <td>{{city.IsOfficial}}</td>
-        <td>{{city.Percentage}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<div class="table1-responsive">
-  <table class="table1">
-    <thead>
-      <tr>
-        <th scope="col">Code</th>
-        <th scope="col">Country</th>
-        <th scope="col">Continent</th>
-        <th scope="col">Region</th>
-        <th scope="col">SurfacrArea</th>
-        <th scope="col">IndepYear</th>
-        <th scope="col">Population</th>
-        <th scope="col">LifExpenctancy</th>
-        <th scope="col">GNP</th>
-        <th scope="col">GNPOLD</th>
-        <th scope="col">LocalName</th>
-        <th scope="col">GovermentForm</th>
-        <th scope="col">HeadOfState</th>
-        <th scope="col">Capital</th>
-        <th scope="col">Code2</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>{{ city.Code }}</td> 
-        <td>{{ city.Name }}</td>
-        <td>{{ city.Continent }} </td>
-        <td>{{ city.Region }}</td>
-        <td>{{city.SurfaceArea }}</td>
-        <td>{{ city.IndepYear }}</td>
-        <td>{{city.Population}}</td>
-        <td>{{ city.LifeExpectancy }}</td>
-        <td>{{ city.GNP }}</td>
-        <td>{{ city.GNPOld }}</td>
-        <td>{{ city.LocalName }}</td>
-        <td>{{ city.GovermentForm }}</td>
-        <td>{{ city.HeadOfState }}</td>
-        <td>{{ city.Capital }}</td>
-        <td>{{ city.Code2 }}</td>
+        <td><a href="/topics/{{city.id}}">{{ city.Name }}</a></td>
+        <td><a href="/topics2/{{city.sl}}">{{city.Language}}</a></td>
+         <td><a href="/topics1/{{ city.id }}">{{ city.Name }}</a></td>
       </tr>
     </tbody>
   </table>

@@ -115,11 +115,30 @@ class SearchResultsView(ListView):
 
     def get_queryset(self): # new
         query = self.request.GET.get('q')
-        object_list = city.objects.filter(Q(Name__icontains=query))
-        object_con = country.objects.filter(Q(Name__icontains=query))
-        object_lan = countrylanguage.objects.filter(Q(Language__icontains=query))
+        object_list = city.objects.filter(Q(Name=query))
+        object_con = country.objects.filter(Q(Name=query))
+        object_lan = countrylanguage.objects.filter(Q(Language=query))
         return chain(object_list , object_con, object_lan)
 
 class HomePageView(TemplateView):
     template_name = 'account/success.html'
+
+def topic(request, topic_id):
+    topic  = city.objects.all().filter(id=topic_id)
+    return render(request, 'topic.html', {'topic':topic} )
+
+def topic_country(request, topic_id):
+    topic  = country.objects.all().filter(id=topic_id)
+    return render(request, 'topic1.html', {'topic':topic} )
+
+def topic_language(request, topic_id):
+    topic  = countrylanguage.objects.all().filter(sl=topic_id)
+    return render(request, 'topic2.html', {'topic':topic} )
+
+
+
+
+
+
+
 

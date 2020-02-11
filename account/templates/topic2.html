@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for entry in topic %}
+<div class="table1-responsive">
+  <table class="table1">
+    <thead>
+      <tr>
+        <th scope="col">Language</th>
+        <th scope="col">CountryCode</th>
+        <th scope="col">IsOfficial</th>
+        <th scope="col">Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ entry.Language }}</td>
+        <td>{{ entry.CountryCode }}</td>
+        <td>{{ entry.IsOfficial }}</td>
+        <td>{{ entry.Percentage }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  {% empty %}
+    <li>There are no entries for this topic yet.</li>
+  {% endfor %}
+  {% endblock %}
+
+

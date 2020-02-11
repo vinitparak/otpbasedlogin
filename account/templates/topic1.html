@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for entry in topic %}
+<div class="table1-responsive">
+  <table class="table1">
+    <thead>
+      <tr>
+        <th scope="col">Code</th>
+        <th scope="col">Country</th>
+        <th scope="col">Continent</th>
+        <th scope="col">Region</th>
+        <th scope="col">SurfacrArea</th>
+        <th scope="col">IndepYear</th>
+        <th scope="col">Population</th>
+        <th scope="col">LifExpenctancy</th>
+        <th scope="col">GNP</th>
+        <th scope="col">GNPOLD</th>
+        <th scope="col">LocalName</th>
+        <th scope="col">GovermentForm</th>
+        <th scope="col">HeadOfState</th>
+        <th scope="col">Capital</th>
+        <th scope="col">Code2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ entry.Code }}</td> 
+        <td>{{ entry.Name }}</td>
+        <td>{{ entry.Continent }} </td>
+        <td>{{ entry.Region }}</td>
+        <td>{{entry.SurfaceArea }}</td>
+        <td>{{ entry.IndepYear }}</td>
+        <td>{{entry.Population}}</td>
+        <td>{{ entry.LifeExpectancy }}</td>
+        <td>{{ entry.GNP }}</td>
+        <td>{{ entry.GNPOld }}</td>
+        <td>{{ entry.LocalName }}</td>
+        <td>{{ entry.GovermentForm }}</td>
+        <td>{{ entry.HeadOfState }}</td>
+        <td>{{ entry.Capital }}</td>
+        <td>{{ entry.Code2 }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  {% empty %}
+    <li>There are no entries for this topic yet.</li>
+  {% endfor %}
+  {% endblock %}
+
+

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+ 
+  {% for entry in topic %}
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">City</th></a>
+        <th scope="col">Countrycode</th></a>
+        <th scope="col">District</th>
+        <th scope="col">population</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ entry.Name }}</td>
+        <td>{{ entry.CountryCode }}</td>
+        <td>{{ entry.District }}</td>
+        <td>{{ entry.Population }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    
+  {% empty %}
+    <li>There are no entries for this topic yet.</li>
+  {% endfor %}
+  {% endblock %}
+
+
